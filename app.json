@@ -1,0 +1,27 @@
+{
+  "name": "Auth Server for Springshare",
+  "description":
+    "A simple webserver with Node and Express. You customize the code with your authentication key etc. Then you can make calls to it as if you were making them directly to Springshare and then get the desired results back. At its core it does two things: Authenticate with Springshare's OAUTH 2.0 server and then passthrough your request to the appropriate API and return results in JSON. Please note, neither I nor this code is affiliated with or sponsored by Springshare.",
+  "repository": "https://github.com/BradCoffield/auth-server-for-springshare/tree/master",
+  "keywords": ["node", "express", "sprinshare", "libguides", "libcal", "API"],
+
+  "env": {
+    "LIBCAL_CLIENT_ID": {
+      "description": "Likely a 3 digit number. Can be found in the LibCal API interface under the Authentication tab.",
+      "required": true
+    },
+    "LIBCAL_CLIENT_SECRET": {
+      "description": "A big long bit of gibberish. Can be found in the LibCal API interface under the Authentication tab.",
+      "required": true
+    },
+    "LIBGUIDES_CLIENT_ID": {
+      "description": "Likely a 3 digit number. Can be found in the LibGuides API interface under the Authentication tab.",
+      "required": true
+    },
+    "LIBGUIDES_CLIENT_SECRET": {
+      "description":
+        "A big long bit of gibberish. Can be found in the LibGuides API interface under the Authentication tab.",
+      "required": true
+    }
+  }
+}
