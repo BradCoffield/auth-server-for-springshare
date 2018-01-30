@@ -46,8 +46,8 @@ app.get("/springshare/libcal/:passthrough", (req, res, next) => {
   const fetchSpringshare = require("./springshare/fetch-springshare");
   const service = "libcal";
   const springshareAuthObj = {
-    client_id: "LIBCAL_CLIENT_ID",
-    client_secret: "LIBCAL_CLIENT_SECRET",
+    client_id: "ENV[LIBCAL_CLIENT_ID]",
+    client_secret: "ENV[LIBCAL_CLIENT_SECRET]",
     grant_type: "client_credentials"
   };
   let sendSpringshareResults = (err, content) => {
@@ -71,8 +71,8 @@ app.get("/springshare/libcal/:passthrough", (req, res, next) => {
  * **************************/
 app.get("/springshare/libguides/:passthrough", (req, res, next) => {
   const lgAuthObj = {
-    client_id: "LIBGUIDES_CLIENT_ID",
-    client_secret: "LIBGUIDES_CLIENT_SECRET",
+    client_id: "ENV[LIBGUIDES_CLIENT_ID]",
+    client_secret: "ENV[LIBGUIDES_CLIENT_SECRET]",
     grant_type: "client_credentials"
   };
   const service = "libguides";
