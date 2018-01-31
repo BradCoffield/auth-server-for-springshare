@@ -18,7 +18,7 @@ let fetchSpringshare = function(token, params, urlFront, callback) {
         return response.data;
       })
       .then(function(response) {
-        myCache.set(`${params}_token_key`, response, 240, function(err, success) {
+        myCache.set(`${params}_token_key`, response, 1, function(err, success) {
           if (!err && success) {
             console.log("setting the cache of the response", success);
           }
