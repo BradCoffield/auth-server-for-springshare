@@ -88,15 +88,8 @@ app.get("/springshare/libguides/:passthrough", (req, res, next) => {
   const service = "libguides";
   let cleanParams = req.query.what;
   let dealingWithInput = _.keys(req.query);
-<<<<<<< HEAD
   if (dealingWithInput.length > 1) {
     let cleanedNoWhatInput = dealingWithInput.filter(word => word != "what");
-=======
-
-  if (dealingWithInput.length > 1) {
-    let cleanedNoWhatInput = dealingWithInput.filter(word => word != "what");
-
->>>>>>> 29dc3b9e7211f9c2772c258f2514c1e278c5dde4
     cleanedNoWhatInput.map(parram => {
       cleanParams += `&${parram}=${req.query[parram]}`;
     });
