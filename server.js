@@ -3,6 +3,7 @@ const NodeCache = require("node-cache");
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
+const _ = require("lodash");
 
 const myCache = new NodeCache();
 const port = process.env.PORT || 3000;
@@ -38,8 +39,17 @@ app.get("/", (req, res, next) => {
  * **************************/
 
 app.get("/springshare/libcal/:passthrough", (req, res, next) => {
-  const cleanParams0 = req.query.what.substr(1);
-  const cleanParams = cleanParams0.substr(0, cleanParams0.length - 1);
+  let cleanParams = req.query.what;
+  let dealingWithInput = _.keys(req.query);
+
+  if (dealingWithInput.length > 1) {
+    let cleanedNoWhatInput = dealingWithInput.filter(word => word != "what");
+
+    cleanedNoWhatInput.map(parram => {
+      cleanParams += `&${parram}=${req.query[parram]}`;
+    });
+  }
+
   const urlFront = "https://api2.libcal.com/1.1";
 
   const springshareAuth = require("./springshare/springshareAuth");
@@ -76,8 +86,16 @@ app.get("/springshare/libguides/:passthrough", (req, res, next) => {
     grant_type: "client_credentials"
   };
   const service = "libguides";
-  const cleanParams0 = req.query.what.substr(1);
-  const cleanParams = cleanParams0.substr(0, cleanParams0.length - 1);
+  let cleanParams = req.query.what;
+  let dealingWithInput = _.keys(req.query);
+
+  if (dealingWithInput.length > 1) {
+    let cleanedNoWhatInput = dealingWithInput.filter(word => word != "what");
+
+    cleanedNoWhatInput.map(parram => {
+      cleanParams += `&${parram}=${req.query[parram]}`;
+    });
+  }
   const urlFront = "https://lgapi-us.libapps.com/1.2";
   const springshareAuth = require("./springshare/springshareAuth");
   const fetchSpringshare = require("./springshare/fetch-springshare");
