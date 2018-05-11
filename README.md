@@ -32,7 +32,7 @@ Well, now you can make your requests for data from the respective Springshare AP
 
 If you wanted a list of your AZ assets from LibGuides the documentation says you should query the url: `https://lgapi-us.libapps.com/1.2/az`. Instead you would query your new server like this: `https://www.your-new-server.herokuapp.com/springshare/libguides/passthrough?what="/az"`
 
-In LibCal, for a list of spaces by category they say you should query `https://api2.libcal.com/1.1/space/categories/:id`. Instead you would query your server like this: `https://www.your-new-server.herokuapp.com/libcal/passthrough?what="/space/categories/3162"`
+In LibCal, for a list of spaces by category they say you should query `https://api2.libcal.com/1.1/space/categories/:id`. Instead you would query your server like this: `https://www.your-new-server.herokuapp.com/springshare/libcal/passthrough?what="/space/categories/3162"`
 
 **What's going on here?** Basically you pull the last part(s) of the valid query you would make to them and put it in quotes there after `?what=`. Do include the forward slash at the start of what's in quotes.
 
