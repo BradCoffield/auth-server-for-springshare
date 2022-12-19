@@ -1,8 +1,7 @@
 {
   "name": "auth-server-for-springshare",
-  "version": "1.0.0",
-  "description":
-    "A Node server that works with the LibCal and LibGuides API v1.2 endpoints and returns your requested data.",
+  "version": "1.0.3",
+  "description": "A Node server that works with the LibCal and LibGuides API v1.2 endpoints and returns your requested data.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/BradCoffield/auth-server-for-springshare.git"
   },
-  "keywords": ["node", "express", "springshare", "libguides", "libcal", "API"],
+  "keywords": [
+    "node",
+    "express",
+    "springshare",
+    "libguides",
+    "libcal",
+    "API"
+  ],
   "author": "Brad Coffield",
   "license": "ISC",
   "bugs": {
@@ -22,6 +28,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "cors": "^2.8.4",
+    "dotenv": "^16.0.3",
     "express": "^4.16.2",
     "node-cache": "^4.1.1"
   }
