@@ -10,6 +10,10 @@
       "description": "Likely a 3 digit number. Can be found in the LibCal API interface under the Authentication tab.",
       "required": true
     },
+    "LIBCAL_ORGANIZATION_URL": {
+      "description": "The URL for your libcal instance; likely will end in .libcal.com ; Can be found in the LibCal API interface under the Authentication tab.",
+      "required": true
+    },
     "LIBCAL_CLIENT_SECRET": {
       "description": "A big long bit of gibberish. Can be found in the LibCal API interface under the Authentication tab.",
       "required": true
